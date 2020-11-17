@@ -53,7 +53,7 @@ namespace FrancyInkFullScreen {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/FrancyInkFullScreen;V1.0.0.0;component/reserr.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/FrancyInkFullScreen;component/reserr.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\ResErr.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

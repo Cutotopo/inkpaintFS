@@ -5,13 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FrancyInkFullScreen"
         mc:Ignorable="d"
-        WindowStyle="None"
         ResizeMode="NoResize"
         WindowStartupLocation="Manual"
-        Left="880" Top="1620"
-        Title="PannelloRapido" Height="300" Width="200">
+        Left="1720" Top="780"
+        WindowStyle="None"
+        Background="DarkSlateBlue"
+        BorderThickness="2"
+        Topmost="True"
+        Title="Pannello rapido" Height="300" Width="200">
     <Grid>
-        
+        <ComboBox HorizontalAlignment="Center" Background="Transparent" Foreground="Black" Height="20" Margin="0,10,0,0" VerticalAlignment="Top" Width="176">
+            <ComboBoxItem Content="Nessuna tavola" IsSelected="True" />
+        </ComboBox>
+        <CheckBox Content="Evidenziatore" Background="Transparent" Foreground="White" HorizontalAlignment="Left" Margin="10,35,0,0" VerticalAlignment="Top"/>
+
     </Grid>
 </Window>
 

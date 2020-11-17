@@ -689,8 +689,8 @@ namespace FrancyInkFullScreen
 
         private void ApriPannelloRapido(object sender, RoutedEventArgs e)
         {
-            TogglePannelloRapido.Label = "Chiudi pannello rapido";
-            TogglePannelloRapido.Label = " era un clic ChiudiPannelloRapido";
+            PannelloRapido panel = new PannelloRapido();
+            panel.Show();
         }
 
 

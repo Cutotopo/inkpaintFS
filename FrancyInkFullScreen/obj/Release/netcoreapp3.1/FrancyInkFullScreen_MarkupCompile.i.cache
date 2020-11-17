@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\franc\source\repos\FrancyInkFullScreen\FrancyInkFullScreen\obj\Release\netcoreapp3.1\
+C:\Users\franc\Documents\GitHub\inkpaintFS\FrancyInkFullScreen\obj\Release\netcoreapp3.1\
 FrancyInkFullScreen
 none
 false
-TRACE;RELEASE;NETCOREAPP;NETCOREAPP3_1
-C:\Users\franc\source\repos\FrancyInkFullScreen\FrancyInkFullScreen\App.xaml
+TRACE;RELEASE;NETCOREAPP;NETCOREAPP3_1;
+C:\Users\franc\Documents\GitHub\inkpaintFS\FrancyInkFullScreen\App.xaml
 468924383
 
 81341601884
-1921654412462
+192-1581254501
 MainWindow.xaml;PannelloRapido.xaml;PrintWindow.xaml;ResErr.xaml;
 
-False
+True
 

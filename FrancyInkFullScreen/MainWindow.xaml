@@ -98,7 +98,7 @@
                     <RibbonButton Label="Giallo" Click="ColoreGiallo" Background="Yellow"/>
                 </RibbonGroup>
                 <RibbonGroup Header="Opzioni">
-                    <RibbonButton Label="Apri pannello rapido" x:Name="TogglePannelloRapido" x:FieldModifier="public" />
+                    <RibbonButton Label="Apri pannello rapido" Click="ApriPannelloRapido" x:Name="TogglePannelloRapido" x:FieldModifier="public" />
                 </RibbonGroup>
             </RibbonTab>
             <RibbonTab Header="Strumenti">
