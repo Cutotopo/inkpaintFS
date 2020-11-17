@@ -1,0 +1,157 @@
+﻿<Window x:Class="FrancyInkFullScreen.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FrancyInkFullScreen"
+        mc:Ignorable="d"
+        WindowState="Maximized"
+        WindowStyle="None"
+        Title="FrancyInk FSBETA (1080p)" Height="1080" Width="1920">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1080"/>
+        </Grid.RowDefinitions>
+        <Image HorizontalAlignment="Left" Height="1080" Width="1920" VerticalAlignment="Top" Source="/rows1920.png">
+        <Image.Style>
+            <Style TargetType="{x:Type Image}">
+                <Setter Property="Visibility" Value="Hidden" />
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding ElementName=ControlloRighe, Path=IsChecked}" Value="True">
+                        <Setter Property="Visibility" Value="Visible" />
+                    </DataTrigger>
+                </Style.Triggers>
+            </Style>
+        </Image.Style>
+        </Image>
+        <Image HorizontalAlignment="Left" Height="1080" VerticalAlignment="Top" Width="1920" Source="/squares1920.png">
+            <Image.Style>
+                <Style TargetType="{x:Type Image}">
+                    <Setter Property="Visibility" Value="Hidden" />
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding ElementName=ControlloGriglia, Path=IsChecked}" Value="True">
+                            <Setter Property="Visibility" Value="Visible" />
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Image.Style>
+        </Image>
+        <Ribbon x:Name="Ribbon"  SelectedIndex="0" Margin="0,-20,0,742">
+            <Ribbon.ApplicationMenu>
+                <RibbonApplicationMenu KeyTip="F" Label="File">
+                    <RibbonApplicationMenuItem Header="Apri" Click="Apri" />
+                    <RibbonApplicationSplitMenuItem Header="Salva" Click="Salva">
+                        <RibbonApplicationMenuItem Header="File FrancyInk" Click="Salva"/>
+                        <RibbonApplicationMenuItem Header="File FrancyInk Low-Res" Click="SalvaLR"/>
+                    </RibbonApplicationSplitMenuItem>
+                    <RibbonApplicationSplitMenuItem Header="Salva una copia" Click="Salva">
+                        <RibbonApplicationMenuItem Header="File FrancyInk" Click="Salva"/>
+                        <RibbonApplicationMenuItem Header="File FrancyInk Low-Res" Click="SalvaLR"/>
+                    </RibbonApplicationSplitMenuItem>
+                    <RibbonApplicationSplitMenuItem Header="Evidenziatore" Click="Evidenzia">
+                        <RibbonApplicationMenuItem Header="Disattiva" Click="NoEvidenzia" />
+                        <RibbonApplicationMenuItem Header="Attiva con il colore corrente" Click="Evidenzia" />
+                        <RibbonApplicationMenuItem Header="Rosso" Click="EvidenziatoreRosso" />
+                        <RibbonApplicationMenuItem Header="Verde" Click="EvidenziatoreVerde" />
+                        <RibbonApplicationMenuItem Header="Giallo" Click="EvidenziatoreGiallo" />
+                    </RibbonApplicationSplitMenuItem>
+                    <RibbonApplicationMenuItem Header="Input" >
+                        <RibbonApplicationMenuItem Header="Penna e mouse" IsEnabled="False"/>
+                        <RibbonApplicationMenuItem Header="Solo penna" IsEnabled="False" />
+                        <RibbonApplicationMenuItem Header="Solo mouse" IsEnabled="True" />
+                    </RibbonApplicationMenuItem>
+                    <RibbonApplicationSplitMenuItem Header="Sfondo" Click="ApriImmagineMenu">
+                        <RibbonApplicationMenuItem Header="Nessuna immagine caricata" IsEnabled="False" x:Name="PercorsoFileMenu" />
+                        <RibbonApplicationMenuItem IsEnabled="False" Height="10"/>
+                        <RibbonApplicationMenuItem Header="Seleziona immagine" Click="ApriImmagineMenu"/>
+                        <RibbonApplicationMenuItem Header="Rimuovi immagine" Click="RimuoviImmagine" />
+                    </RibbonApplicationSplitMenuItem>
+                    <RibbonSeparator />
+                    <RibbonApplicationSplitMenuItem Header="Stampa" Click="Stampa">
+                        <RibbonApplicationMenuItem Header="Stampa" Click="Stampa"/>
+                        <RibbonApplicationMenuItem Header="Stampa rapida" Click="StampaRapida"/>
+                        <RibbonApplicationMenuItem Header="Anteprima di stampa" IsEnabled="False" />
+                    </RibbonApplicationSplitMenuItem>
+                    <RibbonSeparator />
+                    <RibbonApplicationMenuItem Header="Elimina tavola" Click="EliminaTutto" />
+                    <RibbonSeparator />
+                    <RibbonApplicationMenuItem Header="Chiudi" Click="Esci" />
+                </RibbonApplicationMenu>
+            </Ribbon.ApplicationMenu>
+            <RibbonTab Header="Penna">
+                <RibbonGroup Header="Spessore del tratto">
+                    <RibbonButton Label="1,0" Click="Thickness10" />
+                    <RibbonButton Label="1,5" Click="Thickness15" />
+                    <RibbonButton Label="2,0" Click="Thickness20" />
+                    <RibbonButton Label="2,5" Click="Thickness25" />
+                    <RibbonButton Label="3,0" Click="Thickness30" />
+                    <RibbonButton Label="3,5" Click="Thickness35" />
+                    <RibbonButton Label="4,0" Click="Thickness40" />
+                    <RibbonButton Label="4,5" Click="Thickness45" />
+                    <RibbonButton Label="5,0" Click="Thickness50" />
+                </RibbonGroup>
+                <RibbonGroup Header="Colore del tratto">
+                    <RibbonButton Label="Nero" Click="ColoreNero" Background="Black" Foreground="White"/>
+                    <RibbonButton Label="Rosso" Click="ColoreRosso" Background="Red" Foreground="White"/>
+                    <RibbonButton Label="Verde" Click="ColoreVerde" Background="Green" Foreground="White"/>
+                    <RibbonButton Label="Blu" Click="ColoreBlu" Background="Blue" Foreground="White"/>
+                    <RibbonButton Label="Giallo" Click="ColoreGiallo" Background="Yellow"/>
+                </RibbonGroup>
+                <RibbonGroup Header="Opzioni">
+                    <RibbonButton Label="Apri pannello rapido" x:Name="TogglePannelloRapido" x:FieldModifier="public" />
+                </RibbonGroup>
+            </RibbonTab>
+            <RibbonTab Header="Strumenti">
+                <RibbonGroup Header="Modifica">
+                    <RibbonButton Label="Gomma" Click="ColoreBianco"/>
+                </RibbonGroup>
+                <RibbonGroup Header="Colore">
+                    <RibbonCheckBox Label="Evidenziatore" Checked="Evidenzia" Unchecked="NoEvidenzia" />
+                </RibbonGroup>
+                <RibbonGroup Header="Disegno" >
+                    <RibbonButton Label="Svuota tavola" Click="EliminaTutto" />
+                </RibbonGroup>
+            </RibbonTab>
+            <RibbonTab Header="Visualizzazione">
+                <RibbonGroup Header="Risoluzione">
+                    <TextBox Text="1920x1080" IsEnabled="False" />
+                    <Button Content="Applica" IsEnabled="False"/>
+                    <Button Content="(i)" Click="ResInfo"/>
+                </RibbonGroup>
+                <RibbonGroup Header="Zoom">
+                    <RibbonButton Label="Aumenta" Click="ZoomIn"/>
+                    <RibbonButton Label="Riduci" Click="ZoomOut"/>
+                </RibbonGroup>
+                <RibbonGroup Header="Guide">
+                    <RibbonCheckBox Label="Quadretti" x:Name="ControlloGriglia" />
+                    <RibbonCheckBox Label="Righe" x:Name="ControlloRighe" />
+                </RibbonGroup>
+            </RibbonTab>
+            <RibbonTab Header="Sfondo">
+                <RibbonGroup Header="Immagine">
+                    <RibbonButton Label="Apri immagine" x:Name="ApriImmagineButton" Click="ApriImmagine" />
+                    <RibbonButton Label="Rimuovi immagine" Click="RimuoviImmagine" />
+                </RibbonGroup>
+                <RibbonGroup Header="Percorso">
+                    <Label Content="Percorso immagine corrente" />
+                    <Button Content="   Nessun file aperto   " x:Name="PercorsoFile" IsEnabled="False" />
+                </RibbonGroup>
+            </RibbonTab>
+            <RibbonTab Header="Cronologia">
+                <RibbonGroup Header="Evento">
+                    <Button Content="Nessun evento da mostrare" x:Name="EventoTipo" IsEnabled="False" Width="256"/>
+                    <Button Content="" Width="256" IsEnabled="False" x:Name="EventoDurata" />
+                </RibbonGroup>
+                <RibbonGroup Header="Ultimo evento">
+                    <Button Content="Nessun evento recente" Width="256" IsEnabled="False" x:Name="UltimoEventoTipo" />
+                    <Button Content="--:--:--" Width="256" IsEnabled="False" x:Name="UltimoEventoOra" />
+                </RibbonGroup>
+            </RibbonTab>
+
+
+        </Ribbon>
+        <Image HorizontalAlignment="Left" x:Name="ImageControl" VerticalAlignment="Top" Height="1088" Width="1926" Margin="0,115,0,0"/>
+        <InkCanvas Margin="0,115,0,0" x:FieldModifier="public" x:Name="FrancyINK" Background="Transparent" />
+        <Label Content="File" Foreground="White" IsHitTestVisible="False" Margin="4,1,1888,1054"/>
+    </Grid>
+</Window>
