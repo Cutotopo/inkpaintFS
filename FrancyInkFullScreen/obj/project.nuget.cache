@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "CSxiHnaGRyIEQgvjVu0ZCS9y7+JziJjrAu/MkuxSVTyWxL26rNjlURFv0TZNcwHktMewOkzI6UiBXb1b66/vwA==",
+  "dgSpecHash": "8T4DwFAZ60hN3dK+RI6ZIDWzjVPb8Z0nl1p80UqcJtMOKzc0OP6Agk6Ape7Wbn+XEvIewwamJnl9PWJ+CR0zzw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\franc\\source\\repos\\FrancyInkFullScreen\\FrancyInkFullScreen\\FrancyInkFullScreen.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\franc\\Documents\\GitHub\\inkpaintFS\\FrancyInkFullScreen\\FrancyInkFullScreen.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\franc\\.nuget\\packages\\microsoft.netcore.app.ref\\3.1.0\\microsoft.netcore.app.ref.3.1.0.nupkg.sha512",
+    "C:\\Users\\franc\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\3.1.0\\microsoft.windowsdesktop.app.ref.3.1.0.nupkg.sha512"
+  ],
   "logs": []
 }
