@@ -1,6 +1,9 @@
 # inkpaintFS
 FrancyInk FullScreen project
 
+## Warining!
+This project is no longer mantained and no updates will be released.
+
 Updates on https://twitter.com/CutotopoUpdates
 
 Welcome to the FrancyInk: FullScreen Project.
